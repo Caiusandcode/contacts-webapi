@@ -51,5 +51,12 @@ namespace ContactsWebApi.Controllers
         }
 
         // DELETE api/contacts/{id}
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            _contactService.DeleteContact(id);
+            return new OkResult();
+        }
+    
     }
 }
